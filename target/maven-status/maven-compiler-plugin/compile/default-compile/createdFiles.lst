@@ -1,0 +1,15 @@
+com\parcel\pages\AllProjects.class
+com\collateral360\qa\utilities\SendKeys.class
+com\collateral360\JPMC\RES\Pages\CreateSRFINT.class
+com\collateral360\JPMC\RES\Pages\RFP.class
+com\collateral360\JPMC\RES\Pages\LoginPage.class
+com\collateral360\qa\utilities\Excel.class
+com\parcel\pages\PARCELDashboard.class
+com\collateral360\JPMC\RES\Pages\CollateralOverview.class
+com\collateral360\qa\utilities\Calendar.class
+com\collateral360\qa\utilities\Wait.class
+com\collateral360\JPMC\RES\Pages\C360Dashboard.class
+com\collateral360\JPMC\RES\Pages\ReportStatusPage.class
+com\collateral360\JPMC\RES\Pages\CreateSRF.class
+com\parcel\pages\ProjectDetails.class
+com\collateral360\qa\utilities\Browser.class
