@@ -16,6 +16,9 @@ import com.collateral360.qa.utilities.Calendar;
 import com.collateral360.qa.utilities.Excel;
 import com.collateral360.qa.utilities.Wait;
 
+/*
+ * AJ
+ */
 public class RFP {
 	WebDriver driver;
 	Excel e;
