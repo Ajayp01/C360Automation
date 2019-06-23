@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Wait {
 	
 	public WebDriver driver;
-	public static long pageLoadTimeout=30;
+	public static long pageLoadTimeout=120;
 	public Wait(WebDriver driver) {
 		
 		this.driver=driver;

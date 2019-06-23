@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="50696" started-at="2019-06-22T07:36:33Z" finished-at="2019-06-22T07:37:24Z">
+  <suite name="Default suite" duration-ms="52996" started-at="2019-06-23T17:04:14Z" finished-at="2019-06-23T17:05:07Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="50696" started-at="2019-06-22T07:36:33Z" finished-at="2019-06-22T07:37:24Z">
+    <test name="Default test" duration-ms="52996" started-at="2019-06-23T17:04:14Z" finished-at="2019-06-23T17:05:07Z">
       <class name="collateral.tests.BaseTest">
-        <test-method status="PASS" signature="StartBrowser()[pri:0, instance:collateral.tests.BaseTest@5fdba6f9]" name="StartBrowser" is-config="true" duration-ms="4196" started-at="2019-06-22T07:36:33Z" finished-at="2019-06-22T07:36:37Z">
+        <test-method status="PASS" signature="StartBrowser()[pri:0, instance:collateral.tests.BaseTest@5fdba6f9]" name="StartBrowser" is-config="true" duration-ms="4334" started-at="2019-06-23T17:04:14Z" finished-at="2019-06-23T17:04:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StartBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:collateral.tests.BaseTest@5fdba6f9]" name="Login" duration-ms="46475" started-at="2019-06-22T07:36:37Z" finished-at="2019-06-22T07:37:24Z">
+        <test-method status="PASS" signature="Login()[pri:1, instance:collateral.tests.BaseTest@5fdba6f9]" name="Login" duration-ms="48622" started-at="2019-06-23T17:04:18Z" finished-at="2019-06-23T17:05:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->

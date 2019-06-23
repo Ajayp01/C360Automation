@@ -42,7 +42,8 @@ public LoginPage(WebDriver driver) {
 		uname=e.ReadExcel("Sheet1", 3, 1);
 		password=e.ReadExcel("Sheet1", 4, 1);	
 				
-		    driver.get(url);	
+		    driver.get(url);
+		    driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
 			WebElement SigninButton=driver.findElement(signIn);
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", SigninButton);
 		    //driver.findElement(signIn).click();

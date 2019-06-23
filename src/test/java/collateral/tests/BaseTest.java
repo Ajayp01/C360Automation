@@ -40,7 +40,7 @@ public class BaseTest {
 		
 	}
 	
-	//@Test(priority=2)
+	@Test(priority=2)
 	public void RESCreateSRF() throws Exception
 	{
 		CreateSRF l=new CreateSRF(driver);
