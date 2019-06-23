@@ -1,56 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-06-07T10:57:54Z" name="Default suite" finished-at="2019-06-07T11:06:26Z" duration-ms="511883">
+  <suite name="Default suite" duration-ms="50696" started-at="2019-06-22T07:36:33Z" finished-at="2019-06-22T07:37:24Z">
     <groups>
     </groups>
-    <test started-at="2019-06-07T10:57:54Z" name="Default test" finished-at="2019-06-07T11:06:26Z" duration-ms="511883">
+    <test name="Default test" duration-ms="50696" started-at="2019-06-22T07:36:33Z" finished-at="2019-06-22T07:37:24Z">
       <class name="collateral.tests.BaseTest">
-        <test-method is-config="true" signature="StartBrowser()[pri:0, instance:collateral.tests.BaseTest@3cebbb30]" started-at="2019-06-07T10:57:54Z" name="StartBrowser" finished-at="2019-06-07T10:58:02Z" duration-ms="7938" status="PASS">
+        <test-method status="PASS" signature="StartBrowser()[pri:0, instance:collateral.tests.BaseTest@5fdba6f9]" name="StartBrowser" is-config="true" duration-ms="4196" started-at="2019-06-22T07:36:33Z" finished-at="2019-06-22T07:36:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StartBrowser -->
-        <test-method signature="Login()[pri:1, instance:collateral.tests.BaseTest@3cebbb30]" started-at="2019-06-07T10:58:02Z" name="Login" finished-at="2019-06-07T10:58:42Z" duration-ms="39920" status="PASS">
+        <test-method status="PASS" signature="Login()[pri:1, instance:collateral.tests.BaseTest@5fdba6f9]" name="Login" duration-ms="46475" started-at="2019-06-22T07:36:37Z" finished-at="2019-06-22T07:37:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="RESCreateSRF()[pri:2, instance:collateral.tests.BaseTest@3cebbb30]" started-at="2019-06-07T10:58:42Z" name="RESCreateSRF" finished-at="2019-06-07T11:00:05Z" duration-ms="83406" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RESCreateSRF -->
-        <test-method signature="OpenLoanCreated()[pri:4, instance:collateral.tests.BaseTest@3cebbb30]" started-at="2019-06-07T11:00:05Z" name="OpenLoanCreated" finished-at="2019-06-07T11:00:20Z" duration-ms="15082" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OpenLoanCreated -->
-        <test-method signature="Taskpipeline()[pri:6, instance:collateral.tests.BaseTest@3cebbb30]" started-at="2019-06-07T11:00:20Z" name="Taskpipeline" finished-at="2019-06-07T11:00:58Z" duration-ms="37897" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Taskpipeline -->
-        <test-method signature="CreateRFP()[pri:7, instance:collateral.tests.BaseTest@3cebbb30]" started-at="2019-06-07T11:00:58Z" name="CreateRFP" finished-at="2019-06-07T11:03:06Z" duration-ms="127658" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreateRFP -->
-        <test-method signature="OpenPARCEL()[pri:9, instance:collateral.tests.BaseTest@3cebbb30]" started-at="2019-06-07T11:03:06Z" name="OpenPARCEL" finished-at="2019-06-07T11:04:20Z" duration-ms="74247" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OpenPARCEL -->
-        <test-method signature="CheckBidAtPARCEL()[pri:10, instance:collateral.tests.BaseTest@3cebbb30]" started-at="2019-06-07T11:04:20Z" name="CheckBidAtPARCEL" finished-at="2019-06-07T11:05:16Z" duration-ms="56058" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckBidAtPARCEL -->
-        <test-method signature="AcceptAward()[pri:11, instance:collateral.tests.BaseTest@3cebbb30]" started-at="2019-06-07T11:05:16Z" name="AcceptAward" finished-at="2019-06-07T11:05:46Z" duration-ms="29434" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AcceptAward -->
-        <test-method signature="SendReport()[pri:12, instance:collateral.tests.BaseTest@3cebbb30]" started-at="2019-06-07T11:05:46Z" name="SendReport" finished-at="2019-06-07T11:06:15Z" duration-ms="29705" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SendReport -->
-        <test-method signature="ReportStatus()[pri:13, instance:collateral.tests.BaseTest@3cebbb30]" started-at="2019-06-07T11:06:15Z" name="ReportStatus" finished-at="2019-06-07T11:06:26Z" duration-ms="10476" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportStatus -->
       </class> <!-- collateral.tests.BaseTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
