@@ -6,7 +6,7 @@
       <class name="collateral.tests.BaseTest">
         <methods>
           <include name="StartBrowser"/>
-          <include name="Login"/>
+          <include name="RESCreateSRF"/>
         </methods>
       </class> <!-- collateral.tests.BaseTest -->
     </classes>

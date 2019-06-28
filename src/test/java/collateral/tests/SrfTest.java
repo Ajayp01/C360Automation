@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.collateral360.JPMC.RES.Pages.*;
 
-import com.collateral360.qa.utilities.Browser;
+import com.collateral360.qa.utilities.Base;
 import com.collateral360.qa.utilities.Excel;
 import com.parcel.pages.AllProjects;
 import com.parcel.pages.PARCELDashboard;
@@ -16,7 +16,7 @@ import com.parcel.pages.ProjectDetails;
  * AJ
  */
 
-public class BaseTest {
+public class SrfTest {
 	
 	
 	static WebDriver driver;
@@ -27,8 +27,8 @@ public class BaseTest {
 	@BeforeTest
 	public void StartBrowser() throws Exception
 	{
-		Browser b=new Browser(driver);
-		driver=b.OpenBrowser("Collateral");
+		Base b=new Base(driver);
+		driver=b.initialization("Collateral");
 	}
 	
 	@Test(priority=1)
@@ -36,7 +36,8 @@ public class BaseTest {
 	{
 		LoginPage o=new LoginPage(driver);
 		o.SignIn();
-		o.Impersonate("collateral","");
+		AdminDashboardPage c=new AdminDashboardPage(driver);
+		c.Impersonate("collateral",aid);
 		
 	}
 	
@@ -47,19 +48,10 @@ public class BaseTest {
 		
 		l.RESCreateLoan();
 	}
-
-	//@Test(priority=2)
-	public void CreateSRFINT() throws Exception
-	{
-		CreateSRFINT k=new CreateSRFINT(driver);
-		k.INTCreateLoan();
-		
-		
-	}
 	//@Test(priority=3)
 	public void IsSRFCreated() throws Exception
 	{
-		C360Dashboard d=new C360Dashboard(driver);
+		DashboardPage d=new DashboardPage(driver);
 		d.VerifyCreatedLoan();
 		
 	}
@@ -67,7 +59,7 @@ public class BaseTest {
 	//@Test(priority=4)
 	public void OpenLoanCreated() throws Exception 
 	{
-		C360Dashboard d=new C360Dashboard(driver);
+		DashboardPage d=new DashboardPage(driver);
 		d.VerifyCreatedLoan();
 		d.OpenLoan();
 		
@@ -76,7 +68,7 @@ public class BaseTest {
 	//@Test(priority=5)
 	public void OpenExistingLoan() 
 	{
-		C360Dashboard d=new C360Dashboard(driver);
+		DashboardPage d=new DashboardPage(driver);
 		
 		
 	}
@@ -117,10 +109,9 @@ public class BaseTest {
     //@Test(priority=9)
 	public void OpenPARCEL() throws Exception
 	{
-    	Browser b=new Browser(driver2);
-		driver2=b.OpenBrowser("PARCEL");
-		LoginPage o=new LoginPage(driver2);
-		o.SignIn();
+    	Base b=new Base(driver2);
+		driver2=b.initialization("PARCEL");
+		AdminDashboardPage o=new AdminDashboardPage(driver2);
 		o.Impersonate("parcel",aid);
 	}
 	

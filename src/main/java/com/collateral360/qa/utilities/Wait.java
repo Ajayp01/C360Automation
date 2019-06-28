@@ -19,7 +19,7 @@ public class Wait {
 	public void WaitForSomeTime()
 	{
 		driver.manage().timeouts().pageLoadTimeout(pageLoadTimeout, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 	}
 	
 	public static void SendKeys(WebDriver driver,WebElement element,int timeout,String value)

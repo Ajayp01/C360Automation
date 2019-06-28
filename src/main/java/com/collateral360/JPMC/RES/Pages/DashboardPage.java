@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.collateral360.qa.utilities.Excel;
 import com.collateral360.qa.utilities.Wait;
@@ -18,9 +20,9 @@ import com.collateral360.qa.utilities.Wait;
  * 
  */
 
-public class C360Dashboard {
+public class DashboardPage {
 	
-	public C360Dashboard(WebDriver driver) {
+	public DashboardPage(WebDriver driver) {
 		this.driver=driver;
 	}
 
@@ -34,6 +36,16 @@ public class C360Dashboard {
 		
 		@FindBy(xpath="//div[@id='openOrders']//thead//tr[2]/th[8]")
 		WebElement EnterAddress1;
+		By logo=By.xpath("//img[@id='imgLogo']");
+		//By logo=By.xpath("//img[@id='imgLogo']");
+		By createRequestButton=By.xpath("//a[@data-title='Create New Request']");
+		
+		
+		
+		
+		
+		
+		
 		
 	public WebDriver driver;
 	public Excel e;
@@ -96,11 +108,26 @@ public class C360Dashboard {
 			
 	}
 	
-	public void OpenExistingLoan()
+	public String dashboardPageTitle()
 	{
-		
-		
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+	    wait.until(ExpectedConditions.titleContains("Collateral360"));
+		return driver.getTitle();
 	}
+	
+	public boolean logo() throws InterruptedException
+	{
+		/*WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.presenceOfElementLocated(logo));*/
+		Thread.sleep(10000);
+		return driver.findElement(logo).isDisplayed();
+	}
+	
+	public boolean clickOnCreateRequestButton()
+	{
+		return driver.findElement(createRequestButton).isDisplayed();
+	}
+	
 	
 
 }
