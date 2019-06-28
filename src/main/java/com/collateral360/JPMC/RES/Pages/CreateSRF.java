@@ -123,7 +123,6 @@ public class CreateSRF {
 	public WebDriver driver;
 	
 	public CreateSRF(WebDriver driver) {
-		
 		this.driver=driver;
 	}
 	
@@ -151,9 +150,6 @@ public class CreateSRF {
 		driver.findElement(borrowerName).sendKeys(e.ReadExcel("JPMC", 5, 4));
 		driver.findElement(eCID).sendKeys(e.ReadExcel("JPMC", 5, 5));
 		driver.findElement(anticipatedClosingDateCalendar).click();
-		
-		
-		//String Characters
 		String AnticipatedClosingDate=e.ReadExcel("JPMC", 5, 6);
 
 		String[] t;
@@ -179,10 +175,7 @@ public class CreateSRF {
 		
 		driver.findElement(desiredDateCalendar).click();
 		o.SelectDates(dd,mm,yy);
-		Thread.sleep(2000);
-		//w.WaitForSomeTime();
-		//Radio buttons
-		
+		Thread.sleep(2000);		
 		driver.findElement(isSbaLoanRadioButton).click();
 		//w.WaitForSomeTime();
 	
@@ -214,15 +207,12 @@ public class CreateSRF {
 			
 		}
 		//Select data in the Drop down
-		
 		Thread.sleep(6000);
-		
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");		
 		Thread.sleep(2000);
 		driver.findElement(requesterAID).click();
 		driver.findElement(textbox).sendKeys(e.ReadExcel("JPMC", 5, 17));
 		driver.findElement(By.xpath("//li[contains(text(),'"+e.ReadExcel("JPMC", 5, 17)+"')]")).click();
-		
 		driver.findElement(accountOfficerAID).click();
 		driver.findElement(textbox).sendKeys(e.ReadExcel("JPMC", 5, 18));
 		driver.findElement(By.xpath("//li[contains(text(),'"+e.ReadExcel("JPMC", 5, 18)+"')]")).click();
