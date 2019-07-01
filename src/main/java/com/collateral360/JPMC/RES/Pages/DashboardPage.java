@@ -123,9 +123,14 @@ public class DashboardPage {
 		return driver.findElement(logo).isDisplayed();
 	}
 	
-	public boolean clickOnCreateRequestButton()
+	public boolean validateCreateRequestButton()
 	{
 		return driver.findElement(createRequestButton).isDisplayed();
+	}
+	
+	public void clickOnCreateRequestButton()
+	{
+		driver.findElement(createRequestButton).isDisplayed();
 	}
 	
 	

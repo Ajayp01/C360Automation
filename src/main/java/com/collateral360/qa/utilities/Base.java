@@ -20,7 +20,7 @@ public class Base {
 	
 	
 	 public WebDriver initialization(String Key) throws Exception
-	{
+	 {
 
 		browser(Key);
 		driver.manage().window().maximize();
@@ -29,7 +29,7 @@ public class Base {
 		driver.get(e.ReadExcel("Sheet1", 2, 1));
 		Thread.sleep(5000);
 		return driver;
-	}
+	 }
 	 
 	 private void browser(String Key) throws Exception {
 			e=new Excel("src\\test\\resources\\CollateralData.xlsx");

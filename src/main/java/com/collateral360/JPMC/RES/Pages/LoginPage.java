@@ -10,12 +10,11 @@ import com.collateral360.qa.utilities.*;
 public class LoginPage 
 {
 
-	WebDriver driver;	
+	public WebDriver driver;	
 	Excel e;
 	
 	
 public LoginPage(WebDriver driver) {
-	
 	this.driver=driver;
 }	
 	

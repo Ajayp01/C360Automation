@@ -10,13 +10,15 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.collateral360.qa.utilities.Calendar;
 import com.collateral360.qa.utilities.Excel;
 import com.collateral360.qa.utilities.Wait;
 
-public class CreateSRF {
+public class SrfPage {
 
 	
 	//Transaction Tab
@@ -122,17 +124,17 @@ public class CreateSRF {
 	
 	public WebDriver driver;
 	
-	public CreateSRF(WebDriver driver) {
+	public SrfPage(WebDriver driver) {
 		this.driver=driver;
 	}
 	
 	
 	public void RESCreateLoan() throws Exception
-	{
-		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
-		driver.findElement(createLoanButton).click();
-		Thread.sleep(10000);
-		driver.switchTo().frame(driver.findElement(sRFpage));
+	{		
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(sRFpage));
+		//Thread.sleep(10000);
+		//driver.switchTo().frame(driver.findElement(sRFpage));
 		Thread.sleep(10000);
 		
 		RESTransactionTab();

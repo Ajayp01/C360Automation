@@ -19,32 +19,30 @@ import com.parcel.pages.ProjectDetails;
 public class SrfTest {
 	
 	
-	static WebDriver driver;
+	public WebDriver driver;
 	public WebDriver driver2;
 	public String aid;
-	
+	LoginPage loginPageObj;
+	Base b;
+	AdminDashboardPage adminDashboardPageObj;
+	DashboardPage dashboardPage;
+	SrfPage l;
 	
 	@BeforeTest
-	public void StartBrowser() throws Exception
+	public void setup() throws Exception
 	{
-		Base b=new Base(driver);
+		b=new Base(driver);
 		driver=b.initialization("Collateral");
+		loginPageObj=new LoginPage(driver);
+		loginPageObj.SignIn();
+		adminDashboardPageObj.Impersonate("collateral", aid);
+		dashboardPage.clickOnCreateRequestButton();	
 	}
 	
 	@Test(priority=1)
-	public void Login() throws Exception
-	{
-		LoginPage o=new LoginPage(driver);
-		o.SignIn();
-		AdminDashboardPage c=new AdminDashboardPage(driver);
-		c.Impersonate("collateral",aid);
-		
-	}
-	
-	@Test(priority=2)
 	public void RESCreateSRF() throws Exception
 	{
-		CreateSRF l=new CreateSRF(driver);
+		l=new SrfPage(driver);
 		
 		l.RESCreateLoan();
 	}

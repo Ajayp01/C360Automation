@@ -51,9 +51,9 @@ public class DashboardPageTest{
 	
 	
 	@Test(priority=3)
-	public void clickOnCreateRequestButtonTest()
+	public void CreateRequestButtonTest()
 	{
-		boolean IsButtonAvailable=dashboardPageObj.clickOnCreateRequestButton();
+		boolean IsButtonAvailable=dashboardPageObj.validateCreateRequestButton();
 		Assert.assertTrue(IsButtonAvailable, "Create Request Button is not available");
 	}
 
