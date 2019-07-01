@@ -20,7 +20,9 @@ public LoginPage(WebDriver driver) throws Exception {
 	this.driver=driver;
 	e=new Excel("src\\test\\resources\\CollateralData.xlsx");
 }	
-	
+	/*
+	 * AJ
+	 */
 
 	By Username=By.xpath("//input[@name='username']");
 	By Password=By.xpath("//input[@name='password']");
