@@ -1,6 +1,8 @@
 package com.collateral360.JPMC.RES.Pages;
 
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,8 +16,9 @@ public class LoginPage
 	Excel e;
 	
 	
-public LoginPage(WebDriver driver) {
+public LoginPage(WebDriver driver) throws Exception {
 	this.driver=driver;
+	e=new Excel("src\\test\\resources\\CollateralData.xlsx");
 }	
 	
 
@@ -28,13 +31,16 @@ public LoginPage(WebDriver driver) {
 	
 	public void SignIn() throws Exception
 	{
-		e=new Excel("src\\test\\resources\\CollateralData.xlsx");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver, 25);
 		wait.until(ExpectedConditions.titleContains("Collateral360"));
 		driver.findElement(SignInButton).click();
+		Thread.sleep(3000);
 		driver.findElement(Username).sendKeys( e.ReadExcel("Sheet1", 3, 1));
 		driver.findElement(Password).sendKeys(e.ReadExcel("Sheet1", 4, 1));
-		driver.findElement(EnterButton).click();		
+		
+		driver.findElement(EnterButton).click();	
+		Thread.sleep(4000);
 	}
 
 	public String validateLoginPageTitle()

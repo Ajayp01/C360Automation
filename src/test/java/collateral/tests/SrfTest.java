@@ -1,14 +1,12 @@
 package collateral.tests;
 
-import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import com.collateral360.JPMC.RES.Pages.*;
 
+import com.collateral360.JPMC.RES.Pages.*;
 import com.collateral360.qa.utilities.Base;
-import com.collateral360.qa.utilities.Excel;
 import com.parcel.pages.AllProjects;
 import com.parcel.pages.PARCELDashboard;
 import com.parcel.pages.ProjectDetails;
@@ -28,26 +26,32 @@ public class SrfTest {
 	DashboardPage dashboardPage;
 	SrfPage l;
 	
-	@BeforeTest
+	@BeforeMethod
 	public void setup() throws Exception
 	{
 		b=new Base(driver);
 		driver=b.initialization("Collateral");
 		loginPageObj=new LoginPage(driver);
 		loginPageObj.SignIn();
+		adminDashboardPageObj=new AdminDashboardPage(driver);
 		adminDashboardPageObj.Impersonate("collateral", aid);
+		dashboardPage=new DashboardPage(driver);
 		dashboardPage.clickOnCreateRequestButton();	
+		l=new SrfPage(driver);
 	}
 	
 	@Test(priority=1)
-	public void RESCreateSRF() throws Exception
+	public void closeButtonTest()
 	{
-		l=new SrfPage(driver);
-		
+		l.validateCloseButton();
+	}
+	//@Test(priority=2)
+	public void resCreateSRF() throws Exception
+	{		
 		l.RESCreateLoan();
 	}
 	//@Test(priority=3)
-	public void IsSRFCreated() throws Exception
+	public void isSRFCreated() throws Exception
 	{
 		DashboardPage d=new DashboardPage(driver);
 		d.VerifyCreatedLoan();
@@ -55,7 +59,7 @@ public class SrfTest {
 	}
 	
 	//@Test(priority=4)
-	public void OpenLoanCreated() throws Exception 
+	public void openLoanCreated() throws Exception 
 	{
 		DashboardPage d=new DashboardPage(driver);
 		d.VerifyCreatedLoan();
@@ -64,7 +68,7 @@ public class SrfTest {
 	}
 	
 	//@Test(priority=5)
-	public void OpenExistingLoan() 
+	public void OpenExistingLoan() throws Exception 
 	{
 		DashboardPage d=new DashboardPage(driver);
 		
@@ -145,7 +149,11 @@ public class SrfTest {
 		r.CheckRFPStatus(3);
 	}
 	
-	
+	//@AfterMethod
+	public void teardown()
+	{
+		driver.quit();	
+	}
 	
 	
 }

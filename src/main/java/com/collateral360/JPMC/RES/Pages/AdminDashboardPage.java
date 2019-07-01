@@ -20,17 +20,17 @@ public class AdminDashboardPage {
 	public WebDriver driver;
 	Excel e;
 	
-	public AdminDashboardPage(WebDriver driver) throws IOException{
+	public AdminDashboardPage(WebDriver driver) throws Exception{
 		this.driver=driver;
+		e=new Excel("src\\test\\resources\\CollateralData.xlsx");
 	}
 	
 	public void Impersonate(String Key,String aid) throws Exception
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 25);
 		wait.until(ExpectedConditions.titleContains("Collateral360"));
-		
-		e=new Excel("src\\test\\resources\\CollateralData.xlsx");
 		String id = null;
+		
 		if(Key.equalsIgnoreCase("collateral"))
 		{
 			 id=e.ReadExcel("JPMC", 0, 1);//we get impersonate aid

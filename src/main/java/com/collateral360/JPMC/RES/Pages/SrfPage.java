@@ -117,7 +117,7 @@ public class SrfPage {
 	By comments=By.xpath("//textarea[@id='Comments']");
 	By submitServiceRequest=By.xpath("//input[@id='submitServiceRequest']");
 	
-	
+	By closeButton=By.xpath("//a[@title='Close']");
 	
 	Calendar o;
 	public Excel e;
@@ -131,7 +131,7 @@ public class SrfPage {
 	
 	public void RESCreateLoan() throws Exception
 	{		
-		WebDriverWait wait = new WebDriverWait(driver,10);
+		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(sRFpage));
 		//Thread.sleep(10000);
 		//driver.switchTo().frame(driver.findElement(sRFpage));
@@ -141,6 +141,13 @@ public class SrfPage {
 		RESCollateralTab();
 	}
 	
+	public void validateCloseButton()
+	{
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebElement closebutton=driver.findElement(closeButton);
+		wait.until(ExpectedConditions.visibilityOf(closebutton)); //this will wait for elememt to be visible for 30 seconds
+		closebutton.click();
+	}
 	
 	private void RESTransactionTab() throws Exception
 	{

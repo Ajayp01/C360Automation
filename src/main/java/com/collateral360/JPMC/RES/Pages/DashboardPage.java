@@ -22,8 +22,9 @@ import com.collateral360.qa.utilities.Wait;
 
 public class DashboardPage {
 	
-	public DashboardPage(WebDriver driver) {
+	public DashboardPage(WebDriver driver) throws Exception {
 		this.driver=driver;
+		e=new Excel("src\\test\\resources\\CollateralData.xlsx");
 	}
 
 	//Dashbaord
@@ -39,11 +40,7 @@ public class DashboardPage {
 		By logo=By.xpath("//img[@id='imgLogo']");
 		//By logo=By.xpath("//img[@id='imgLogo']");
 		By createRequestButton=By.xpath("//a[@data-title='Create New Request']");
-		
-		
-		
-		
-		
+		By settingsButton=By.xpath("//button[contains(@id,'SettingsButton')]");
 		
 		
 		
@@ -56,7 +53,7 @@ public class DashboardPage {
 	 
 	public void VerifyCreatedLoan() throws Exception
 	{
-		e=new Excel("src\\test\\resources\\CollateralData.xlsx");
+
 		Wait w=new Wait(driver);
 		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
@@ -130,7 +127,11 @@ public class DashboardPage {
 	
 	public void clickOnCreateRequestButton()
 	{
-		driver.findElement(createRequestButton).isDisplayed();
+		WebElement Button=driver.findElement(settingsButton);
+		WebDriverWait wait=new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.elementToBeClickable(Button));
+		
+		driver.findElement(createRequestButton).click();
 	}
 	
 	

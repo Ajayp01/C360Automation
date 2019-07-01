@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="collateral.tests.BaseTest">
+      <class name="collateral.tests.SrfTest">
         <methods>
-          <include name="StartBrowser"/>
-          <include name="RESCreateSRF"/>
+          <include name="setup"/>
+          <include name="closeButtonTest"/>
         </methods>
-      </class> <!-- collateral.tests.BaseTest -->
+      </class> <!-- collateral.tests.SrfTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
