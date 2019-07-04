@@ -5,8 +5,8 @@
     <classes>
       <class name="collateral.tests.SrfTest">
         <methods>
+          <include name="resCreateSRF"/>
           <include name="setup"/>
-          <include name="closeButtonTest"/>
         </methods>
       </class> <!-- collateral.tests.SrfTest -->
     </classes>

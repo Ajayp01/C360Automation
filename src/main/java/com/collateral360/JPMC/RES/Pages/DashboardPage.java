@@ -13,13 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.collateral360.qa.utilities.Excel;
 import com.collateral360.qa.utilities.Wait;
 
-/* 
- * 
- * AJ
- * 
- * 
- */
-
 public class DashboardPage {
 	
 	public DashboardPage(WebDriver driver) throws Exception {
@@ -130,7 +123,6 @@ public class DashboardPage {
 		WebElement Button=driver.findElement(settingsButton);
 		WebDriverWait wait=new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.elementToBeClickable(Button));
-		
 		driver.findElement(createRequestButton).click();
 	}
 	

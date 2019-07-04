@@ -40,12 +40,12 @@ public class SrfTest {
 		l=new SrfPage(driver);
 	}
 	
-	@Test(priority=1)
+	//@Test(priority=1)
 	public void closeButtonTest()
 	{
 		l.validateCloseButton();
 	}
-	//@Test(priority=2)
+	@Test(priority=2)
 	public void resCreateSRF() throws Exception
 	{		
 		l.RESCreateLoan();

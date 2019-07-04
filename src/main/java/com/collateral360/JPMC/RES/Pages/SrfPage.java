@@ -121,8 +121,8 @@ public class SrfPage {
 	
 	Calendar o;
 	public Excel e;
-	
 	public WebDriver driver;
+
 	
 	public SrfPage(WebDriver driver) {
 		this.driver=driver;
@@ -131,11 +131,9 @@ public class SrfPage {
 	
 	public void RESCreateLoan() throws Exception
 	{		
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebDriverWait wait = new WebDriverWait(driver,50);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(sRFpage));
-		//Thread.sleep(10000);
-		//driver.switchTo().frame(driver.findElement(sRFpage));
-		Thread.sleep(10000);
+		//Thread.sleep(20000);
 		
 		RESTransactionTab();
 		RESCollateralTab();
@@ -153,7 +151,13 @@ public class SrfPage {
 	{
 		
 		e=new Excel("src\\test\\resources\\CollateralData.xlsx");
-		driver.findElement(projectName).sendKeys(e.ReadExcel("JPMC", 5, 1));
+		/*WebElement pname=driver.findElement(projectName);
+		Wait.SendKeys(driver, pname, 40,e.ReadExcel("JPMC", 5, 1));*/
+		WebDriverWait wait=new WebDriverWait(driver,40);
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='ProjectName']")));
+		WebElement element1 =driver.findElement(projectName);
+		wait.until(ExpectedConditions.elementToBeClickable(projectName));
+		element1.sendKeys(e.ReadExcel("JPMC", 5, 1));
 		driver.findElement(loanNumber).sendKeys(e.ReadExcel("JPMC", 5, 2));
 		driver.findElement(loanAmount).sendKeys(e.ReadExcel("JPMC", 5, 3));
 		driver.findElement(borrowerName).sendKeys(e.ReadExcel("JPMC", 5, 4));
